@@ -29,7 +29,7 @@ class Calculator extends Component {
         else
             display = this.state.display + num;
 
-        if(display < 13){
+        if(display.length < 13){
             this.setState({
                 display: display
             });
@@ -49,6 +49,7 @@ class Calculator extends Component {
     calculate(){
         if(this.state.operator === ''){ return;  }
 
+
         var result;
         if(this.state.operator === '*')
             result = this.state.temp * parseInt(this.state.display);
@@ -65,7 +66,7 @@ class Calculator extends Component {
     }
 
     onPressClear(){
-        this.setState({display: "", temp: '0', operator: null});
+        this.setState({display: "", temp: '0', operator: ''});
     }
 
     render() {
